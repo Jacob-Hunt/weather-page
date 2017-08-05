@@ -7,4 +7,3 @@ A simple page for showing the local weather.
 * Add credits footer
 * Improve code for noWeatherError()
 * Move helper functions to own file/class
-* Add formatting to unit-switch link

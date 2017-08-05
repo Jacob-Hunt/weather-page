@@ -62,6 +62,8 @@ body {
 
 #units-html > a:hover {
   color: #ddd;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 #loader-text {
