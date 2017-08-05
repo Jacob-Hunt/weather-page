@@ -29,51 +29,51 @@ function main(){
                + position.coords.longitude;
     $.getJSON(apiURL)
     .done(function(json){
-	  // if JSON call successful, use JSON to make an HTML factory
-	  htmlFactory = new HtmlFactory(json);
-	  // display page
+      // if JSON call successful, use JSON to make an HTML factory
+      htmlFactory = new HtmlFactory(json);
+      // display page
       fadePageIn(htmlFactory);
-	})
+    })
     .fail(function(){
-	  noWeatherError();
-	});
+      noWeatherError();
+    });
   }
   
   function fadePageIn(htmlFactory){
-	/* Use fade effect to display page */
-	
+    /* Use fade effect to display page */
+    
     // pre-load background image
-	var bgImage = new Image();
-	bgImage.onload = function(){
+    var bgImage = new Image();
+    bgImage.onload = function(){
       $("body").html(htmlFactory.bodyHTML);
-	  $("body").css("background-image", "url('" + bgImage.src + "')");
+      $("body").css("background-image", "url('" + bgImage.src + "')");
       $("#main").fadeIn(5000);
       $("#blackscreen").fadeOut(10000);
-	}
-	bgImage.src = htmlFactory.backgroundURL;
+    }
+    bgImage.src = htmlFactory.backgroundURL;
   }
   
   function noWeatherError(){
     /* Failure callback for $.getJSON() */
     $("body").html("<h3 class='vertical-center-text' align='center'>"
-                          + "<i class='fa fa-window-close fa-5x' "
-                          + "aria-hidden='true'></i><br />"
-                          + "Could not retrieve weather.</h3>");
+                 + "<i class='fa fa-window-close fa-5x' "
+                 + "aria-hidden='true'></i><br />"
+                 + "Could not retrieve weather.</h3>");
   }
 }
 
 
 function switchUnits(units){
-	/* onClick script for switching between C and F on page */
+    /* onClick script for switching between C and F on page */
     if (units === 'F' || units === 'C'){
-		var tempHTML = htmlFactory.getTemperatureHTML(currentTemp, units);
-		var unitsHTML = htmlFactory.getTemperatureUnitsHTML(units);
-		$("#temp-html").html(tempHTML);
-		$("#units-html").html(unitsHTML);
+        var tempHTML = htmlFactory.getTemperatureHTML(currentTemp, units);
+        var unitsHTML = htmlFactory.getTemperatureUnitsHTML(units);
+        $("#temp-html").html(tempHTML);
+        $("#units-html").html(unitsHTML);
     } else {
-		console.log("Invalid argument for setUnits() in index.js")
-		return undefined;
-	}
+        console.log("Invalid argument for setUnits() in index.js");
+        return undefined;
+    }
 }
 
 

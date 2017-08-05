@@ -1,15 +1,15 @@
 class HtmlFactory {
   constructor(json){
-	this.placeName = json.name;
-	this.temp = json.main.temp;
+    this.placeName = json.name;
+    this.temp = json.main.temp;
     this.units = helpers.getUnits(json.sys.country);
     this.weatherIcon = json.weather[0].icon; 
     this.weatherText = helpers.capitalize(json.weather[0].description);
-	this.weatherID = json.weather[0].id;
+    this.weatherID = json.weather[0].id;
 
-	// Save to globals
-	currentTemp = this.temp;
-	currentUnits = this.units;
+    // Save to globals
+    currentTemp = this.temp;
+    currentUnits = this.units;
   }
 
   getTemperatureHTML(temp, units) {
@@ -19,15 +19,15 @@ class HtmlFactory {
     } else if (units === 'C'){
       temp = helpers.round(temp, 1).toString();
     } else {
-	  var errorMessage = "Error: invalid argument for 'units' variable in HtmlFactory.getTemperatureHTML()";
+      var errorMessage = "Error: invalid argument for 'units' variable in HtmlFactory.getTemperatureHTML()";
       console.log(errorMessage);
-	  return errorMessage;
+      return errorMessage;
     }
     return temp + "&deg";
   }
   
   getTemperatureUnitsHTML(units){
-	/* HTML snippet for displaying what units user is viewing temperature in  */
+    /* HTML snippet for displaying what units user is viewing temperature in  */
     if (units === 'F'){
       return "F | <a onclick=\"switchUnits('C')\">C</a>";
     } else if (units === 'C'){
@@ -153,7 +153,7 @@ class HtmlFactory {
   
   get bodyHTML(){
     return (
-	    "<div id='blackscreen'></div>"
+        "<div id='blackscreen'></div>"
       + "<div class='container'>"
       +    "<div id='main'>"
       +      "<div class='row'>"
@@ -161,25 +161,25 @@ class HtmlFactory {
       +        "<div class='col-lg-6'>"
       +          "<div class='card card-inverse' align='center'>"
       +            "<div class='row'>"
-	  +              "<div class='col-12'>"
+      +              "<div class='col-12'>"
       +                "<h2 id='place-name' align='center'>"
-	  +                  this.placeName + " Weather"
-	  +                "</h2>"
-	  +              "</div>"
+      +                  this.placeName + " Weather"
+      +                "</h2>"
+      +              "</div>"
       +            "</div>"
       +            "<div class='row'>"
-	  +              "<div class='col-sm-6'>"
-	  +                "<img id='w-icon' src='" + this.weatherIcon + "' alt='Weather Image' height='200' width='200'>"
-	  +              "</div>"
-	  +              "<div id='vertical-col-spacer'></div>"
-	  +              "<div class='col-sm-5' id='card-col-r'>"
-	  +                "<h1 id='card-col-r-text'>"
-	  +                  this.weatherText 
-	  +                  "<br />" 
-	  +                  "<span id='temp-html'>" + this.getTemperatureHTML(this.temp, this.units) + "</span>"
-	  +                  "<span id='units-html'>" + this.getTemperatureUnitsHTML(this.units) + "</span>" 
-	  +                "</h1>"
-	  +              "</div>"
+      +              "<div class='col-sm-6'>"
+      +                "<img id='w-icon' src='" + this.weatherIcon + "' alt='Weather Image' height='200' width='200'>"
+      +              "</div>"
+      +              "<div id='vertical-col-spacer'></div>"
+      +              "<div class='col-sm-5' id='card-col-r'>"
+      +                "<h1 id='card-col-r-text'>"
+      +                  this.weatherText 
+      +                  "<br />" 
+      +                  "<span id='temp-html'>" + this.getTemperatureHTML(this.temp, this.units) + "</span>"
+      +                  "<span id='units-html'>" + this.getTemperatureUnitsHTML(this.units) + "</span>" 
+      +                "</h1>"
+      +              "</div>"
       +            "</div>"
       +          "</div>"
       +        "</div>"
@@ -190,6 +190,6 @@ class HtmlFactory {
       + "<nav id='footer' class='navbar fixed-bottom navbar-inverse bg-inverse'>"
       +   "<p>Powered by <a href='https://v4-alpha.getbootstrap.com/' target='_blank'>Bootstrap</a>, <a href='https://jquery.com/' target='_blank'>jQuery</a>, and the <a href='https://fcc-weather-api.glitch.me/' target='_blank'>freeCodeCamp Weather API</a>. | This website was designed and built by <a href='https://jacob-hunt.github.io/' target='_blank'>Jacob Hunt</a>.</p>"
       + "</nav>"
-	);  
+    );  
   }
 }

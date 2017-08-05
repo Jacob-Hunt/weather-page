@@ -8,5 +8,4 @@ A simple page for showing the local weather.
 * Fix loader positioning for small screen sizes
 * Refactor loader html/css into separate files
 * Improve code for noWeatherError()
-* Format whitespace (tabs to spaces)
 * Add different backgrounds for day/night

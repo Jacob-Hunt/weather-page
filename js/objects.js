@@ -20,6 +20,6 @@ var backgrounds = {
     this.thunderstorm = this.root + "thunderstorm.jpg";
     this.tornado = this.root + "dark-storm.jpg";
     this.wind = this.root + "wind.jpg";
-	return this;
+    return this;
   }
 }.init();
