@@ -62,7 +62,7 @@ function displayPage(){
   function noWeatherError(){
     /* Failure callback for $.getJSON() */
     $("body").html(bodyHTML);
-    $("#main-wrapper").html("<h3 class='vertical-center-text' align='center'>"
+    $("#main").html("<h3 class='vertical-center-text' align='center'>"
                           + "<i class='fa fa-window-close fa-5x' "
                           + "aria-hidden='true'></i><br />"
                           + "Could not retrieve weather.</h3>");
