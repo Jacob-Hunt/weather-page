@@ -2,9 +2,9 @@ class HtmlFactory {
   constructor(json){
 	this.placeName = json.name;
 	this.temp = json.main.temp;
-    this.units = getUnits(json.sys.country);
+    this.units = helpers.getUnits(json.sys.country);
     this.weatherIcon = json.weather[0].icon; 
-    this.weatherText = capitalize(json.weather[0].description);
+    this.weatherText = helpers.capitalize(json.weather[0].description);
 	this.weatherID = json.weather[0].id;
 
 	// Save to globals
@@ -15,9 +15,9 @@ class HtmlFactory {
   getTemperatureHTML(temp, units) {
     /* Returns HTML snippet for temperature reading in appropriate units */
     if (units === 'F'){
-      temp = round(((temp * 9/5) + 32), 1).toString();
+      temp = helpers.round(((temp * 9/5) + 32), 1).toString();
     } else if (units === 'C'){
-      temp = round(temp, 1).toString();
+      temp = helpers.round(temp, 1).toString();
     } else {
 	  var errorMessage = "Error: invalid argument for 'units' variable in HtmlFactory.getTemperatureHTML()";
       console.log(errorMessage);
