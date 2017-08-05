@@ -24,7 +24,7 @@ var backgrounds = {
     this.sleet = this.root + "sleet.jpg";
     this.snow = this.root + "snow.jpg";
     this.thunderstorm = this.root + "thunderstorm.jpg";
-    this.tornado = this.root + "hurricane.jpg";
+    this.tornado = this.root + "dark-storm.jpg";
     this.wind = this.root + "wind.jpg";
 	return this;
   }
