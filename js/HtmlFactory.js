@@ -29,9 +29,9 @@ class HtmlFactory {
   getTemperatureUnitsHTML(units){
 	/* HTML snippet for displaying what units user is viewing temperature in  */
     if (units === 'F'){
-      return "F | <a href='#' onclick=\"switchUnits('C')\">C</a>";
+      return "F | <a onclick=\"switchUnits('C')\">C</a>";
     } else if (units === 'C'){
-      return "C | <a href='#' onclick=\"switchUnits('F')\">F</a>";
+      return "C | <a onclick=\"switchUnits('F')\">F</a>";
     }
   }
 
