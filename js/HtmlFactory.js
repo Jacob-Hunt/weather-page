@@ -187,6 +187,9 @@ class HtmlFactory {
       +      "</div>"
       +    "</div>"
       + "</div>"
+      + "<nav id='footer' class='navbar fixed-bottom navbar-inverse bg-inverse'>"
+      +   "<p>Powered by <a href='https://v4-alpha.getbootstrap.com/' target='_blank'>Bootstrap</a>, <a href='https://jquery.com/' target='_blank'>jQuery</a>, and the <a href='https://fcc-weather-api.glitch.me/' target='_blank'>freeCodeCamp Weather API</a>. | This website was designed and built by <a href='https://jacob-hunt.github.io/' target='_blank'>Jacob Hunt</a>.</p>"
+      + "</nav>"
 	);  
   }
 }

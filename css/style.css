@@ -26,6 +26,7 @@ body {
   color: #000;
   padding-top: 15%;
   padding-bottom: 15%;
+  margin-top: -60px;
   font-family: 'Oswald', sans-serif;
 }
 
@@ -64,6 +65,10 @@ body {
   color: #ddd;
   text-decoration: underline;
   cursor: pointer;
+}
+
+#footer {
+  height: 60px;
 }
 
 #loader-text {
