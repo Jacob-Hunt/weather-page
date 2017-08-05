@@ -9,3 +9,4 @@ A simple page for showing the local weather.
 * Refactor loader html/css into separate files
 * Improve code for noWeatherError()
 * Format whitespace (tabs to spaces)
+* Add different backgrounds for day/night
