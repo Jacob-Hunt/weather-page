@@ -29,9 +29,9 @@ class HtmlFactory {
   getTemperatureUnitsHTML(units){
     /* HTML snippet for displaying what units user is viewing temperature in  */
     if (units === 'F'){
-      return "F | <a onclick=\"switchUnits('C')\">C</a>";
+      return "F <br /> <a onclick=\"switchUnits('C')\">Switch to Celsius</a>";
     } else if (units === 'C'){
-      return "C | <a onclick=\"switchUnits('F')\">F</a>";
+      return "C <br /> <a onclick=\"switchUnits('F')\">Switch to Fahrenheit</a>";
     }
   }
 
@@ -156,14 +156,14 @@ class HtmlFactory {
         "<div id='blackscreen'></div>"
       + "<div class='container'>"
       +    "<div id='main'>"
-      +      "<div class='row'>"
+      +      "<div id='main-row' class='row'>"
       +        "<div class='col-lg-3'></div>"
-      +        "<div class='col-lg-6'>"
+      +        "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-6'>"
       +          "<div class='card card-inverse' align='center'>"
       +            "<div class='row'>"
       +              "<div class='col-12'>"
       +                "<h2 id='place-name' align='center'>"
-      +                  this.placeName + " Weather"
+      +                  "Current Weather for " + this.placeName
       +                "</h2>"
       +              "</div>"
       +            "</div>"
@@ -187,7 +187,7 @@ class HtmlFactory {
       +      "</div>"
       +    "</div>"
       + "</div>"
-      + "<nav id='footer' class='navbar fixed-bottom navbar-inverse bg-inverse'>"
+      + "<nav id='footer' class='navbar navbar-inverse bg-inverse'>"
       +   "<p>Powered by <a href='https://v4-alpha.getbootstrap.com/' target='_blank'>Bootstrap</a>, <a href='https://jquery.com/' target='_blank'>jQuery</a>, and the <a href='https://fcc-weather-api.glitch.me/' target='_blank'>freeCodeCamp Weather API</a>. | This website was designed and built by <a href='https://jacob-hunt.github.io/' target='_blank'>Jacob Hunt</a>.</p>"
       + "</nav>"
     );  

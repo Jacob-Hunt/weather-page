@@ -45,8 +45,9 @@ function main(){
     // pre-load background image
     var bgImage = new Image();
     bgImage.onload = function(){
-      $("body").html(htmlFactory.bodyHTML);
       $("body").css("background-image", "url('" + bgImage.src + "')");
+      $("body").css("background-size", "cover");
+      $("body").html(htmlFactory.bodyHTML);
       $("#main").fadeIn(5000);
       $("#blackscreen").fadeOut(10000);
     }
