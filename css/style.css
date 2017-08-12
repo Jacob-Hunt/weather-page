@@ -22,12 +22,16 @@ body {
 #main {
   display: none;
   color: #000;
-  position: relative;
-  padding-top: 15%;
-  padding-bottom: 15%;
   font-family: 'Oswald', sans-serif;
 }
 
+#main-card{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  
 #place-name {
   padding: 25px;
   margin-left: 25px;
@@ -38,7 +42,7 @@ body {
 }
 
 #w-icon {
-  margin: 15px 0px 15px 15px;
+  margin: 15px 15px 15px 15px;
   font-size: 150px;
 }
 
@@ -136,12 +140,52 @@ body {
   border-radius: 15px;
 }
 
-@media(max-width: 575px) {
+@media(max-width: 379px) {
   #card-col-r-text {
-    margin-top: -35px;
+    margin-top: -65px;
+	font-size: 25px;
   }
-  #main {
-    padding-top: 15px;
+  #main-card{
+    width: 90%;
+    height: 475px;
+  }
+}
+
+@media all and (min-width: 380px) and (max-width: 575px) {
+  #card-col-r-text {
+    margin-top: -65px;
+  }
+  #main-card{
+    width: 365px;
+    height: 475px;
+  }
+}
+
+@media all and (min-width: 576px) and (max-width: 767px) {
+  #main-card{
+    width: 400px;
+  }
+
+  #w-icon{
+    margin: 0px 0px 0px 0px;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+  }
+}
+
+@media(min-width: 768px){
+  #main-card{
+    width: 600px;
+  }
+  
+  #w-icon{
+    margin: 0px 0px 0px 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
   }
 }
 
