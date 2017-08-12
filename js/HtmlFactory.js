@@ -2,8 +2,7 @@ class HtmlFactory {
   constructor(json){
     this.placeName = json.name;
     this.temp = json.main.temp;
-    this.units = helpers.getUnits(json.sys.country);
-    this.weatherIcon = json.weather[0].icon; 
+    this.units = helpers.getUnits(json.sys.country); 
     this.weatherText = helpers.capitalize(json.weather[0].description);
     this.weatherID = json.weather[0].id;
 
@@ -169,7 +168,7 @@ class HtmlFactory {
       +            "</div>"
       +            "<div class='row'>"
       +              "<div class='col-sm-6'>"
-      +                "<img id='w-icon' src='" + this.weatherIcon + "' alt='Weather Image' height='200' width='200'>"
+      +                "<span id='w-icon'><i class='owf owf-" + this.weatherID + "'></i></span>"
       +              "</div>"
       +              "<div id='vertical-col-spacer'></div>"
       +              "<div class='col-sm-5' id='card-col-r'>"
@@ -188,7 +187,7 @@ class HtmlFactory {
       +    "</div>"
       + "</div>"
       + "<nav id='footer' class='navbar navbar-inverse bg-inverse'>"
-      +   "<p>Powered by <a href='https://v4-alpha.getbootstrap.com/' target='_blank'>Bootstrap</a>, <a href='https://jquery.com/' target='_blank'>jQuery</a>, the <a href='https://fcc-weather-api.glitch.me/' target='_blank'>freeCodeCamp Weather API</a>, and Erik Flowers' <a href='https://erikflowers.github.io/weather-icons/' target='_blank'>Weather Icons</a> font. | This website was designed and built by <a href='https://jacob-hunt.github.io/' target='_blank'>Jacob Hunt</a>.</p>"
+      +   "<p>Powered by <a href='https://v4-alpha.getbootstrap.com/' target='_blank'>Bootstrap</a>, <a href='https://jquery.com/' target='_blank'>jQuery</a>, the <a href='https://www.freecodecamp.org/' target='_blank'>freeCodeCamp</a> mirror of <a href='https://openweathermap.org/api' target='_blank'>OpenWeatherMap API</a>, and owfont <a href='https://websygen.github.io/owfont/' target='_blank'>Weather Icons</a>. | This website was designed and built by <a href='https://jacob-hunt.github.io/' target='_blank'>Jacob Hunt</a>.</p>"
       + "</nav>"
     );  
   }
